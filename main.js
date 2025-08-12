@@ -38,6 +38,10 @@ class Rectangulo extends Figura {
     this.perimetro = 2 * (this.b + this.h);
     return "El perímetro es: " + this.perimetro;
   }
+
+  mostrarTipo() {
+    return "Rectángulo";
+  }
 }
 
 class Triangulo extends Figura {
@@ -53,7 +57,7 @@ class Triangulo extends Figura {
   }
 
   getPerimetro() {
-    // Triángulo rectángulo: perimetro = base + altura + hipotenusa
+   
     this.perimetro = this.base + this.altura + Math.sqrt(this.base ** 2 + this.altura ** 2);
     return "El perímetro es: " + this.perimetro.toFixed(2);
   }
@@ -105,7 +109,11 @@ class Circulo extends Figura {
   }
 }
 
-// Ejemplos de uso:
+let r = new Rectangulo(5, 10);
+console.log(r.mostrarTipo());   
+console.log(r.getArea());
+console.log(r.getPerimetro());
+
 let t = new Triangulo(3, 4);
 console.log(t.mostrarTipo());
 console.log(t.getArea());
