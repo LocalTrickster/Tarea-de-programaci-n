@@ -40,6 +40,83 @@ class Rectangulo extends Figura {
   }
 }
 
-let r = new Rectangulo(2, 4);
-console.log(r.getArea());
-console.log(r.getPerimetro());
+class Triangulo extends Figura {
+  constructor(base, altura) {
+    super();
+    this.base = base;
+    this.altura = altura;
+  }
+
+  getArea() {
+    this.area = (this.base * this.altura) / 2;
+    return "El área es: " + this.area;
+  }
+
+  getPerimetro() {
+    // Triángulo rectángulo: perimetro = base + altura + hipotenusa
+    this.perimetro = this.base + this.altura + Math.sqrt(this.base ** 2 + this.altura ** 2);
+    return "El perímetro es: " + this.perimetro.toFixed(2);
+  }
+
+  mostrarTipo() {
+    return "Triángulo";
+  }
+}
+
+class Cuadrado extends Figura {
+  constructor(lado) {
+    super();
+    this.lado = lado;
+  }
+
+  getArea() {
+    this.area = this.lado * this.lado;
+    return "El área es: " + this.area;
+  }
+
+  getPerimetro() {
+    this.perimetro = 4 * this.lado;
+    return "El perímetro es: " + this.perimetro;
+  }
+
+  mostrarTipo() {
+    return "Cuadrado";
+  }
+}
+
+class Circulo extends Figura {
+  constructor(radio) {
+    super();
+    this.radio = radio;
+  }
+
+  getArea() {
+    this.area = Math.PI * this.radio * this.radio;
+    return "El área es: " + this.area.toFixed(2);
+  }
+
+  getPerimetro() {
+    this.perimetro = 2 * Math.PI * this.radio;
+    return "El perímetro es: " + this.perimetro.toFixed(2);
+  }
+
+  mostrarTipo() {
+    return "Círculo";
+  }
+}
+
+// Ejemplos de uso:
+let t = new Triangulo(3, 4);
+console.log(t.mostrarTipo());
+console.log(t.getArea());
+console.log(t.getPerimetro());
+
+let cu = new Cuadrado(5);
+console.log(cu.mostrarTipo());
+console.log(cu.getArea());
+console.log(cu.getPerimetro());
+
+let ci = new Circulo(2);
+console.log(ci.mostrarTipo());
+console.log(ci.getArea());
+console.log(ci.getPerimetro());
